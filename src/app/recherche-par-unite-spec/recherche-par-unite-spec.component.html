@@ -1,0 +1,72 @@
+<br /><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+  <form class="form-inline">
+    <div class="form-group mx-sm-3 mb-2 mt-2">
+      <label>Unité propriétaire specifique en tapant</label>
+      <input
+        #nom
+        [(ngModel)]="searchTerm"
+        name="searchTerm"
+        class="form-control"
+        (input)="onKeyUp(nom.value)"
+      />
+    </div>
+  </form>
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Marque</th>
+        <th>Série</th>
+        <th>Donation</th>
+        <th>Unité propriétaire</th>
+        <th>Unité specifique</th>
+
+        <th>Date</th>
+        <th>Catégorie</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produit of produitsPagines">
+        <th>{{ produit.idProduit }}</th>
+        <td>{{ produit.nomProduit }}</td>
+        <td>{{ produit.numeros }}</td>
+
+        <td>{{ produit.donation ? "Oui" : "Non" }}</td>
+        <!-- Affichage de Donation -->
+
+        <td>{{ produit.unite }}</td>
+        <td>{{ produit.unitespec }}</td>
+
+        <td>{{ produit.dateCreation | date : "dd/MM/yy" }}</td>
+        <td>{{ produit.categorie.nomCat }}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination Controls -->
+  <div class="pagination">
+    <button
+      class="btn btn-danger"
+      (click)="pagePrecedente()"
+      [disabled]="page === 1"
+    >
+      Précédent
+    </button>
+    <span>Page {{ page }} sur {{ nombreDePages() }}</span>
+    <button
+      class="btn btn-danger"
+      (click)="pageSuivante()"
+      [disabled]="page === nombreDePages()"
+    >
+      Suivant
+    </button>
+  </div>
+</div>

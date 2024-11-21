@@ -1,0 +1,99 @@
+<br /><br /><br /><br /><br />
+
+<div class="container">
+  <div>
+    <h2>Modifier un Produit :</h2>
+  </div>
+  <form>
+    <div hidden class="col-sm-2 col-md-2 col-lg-2">
+      <label>ID Produit</label>
+      <input
+        readonly
+        type="text"
+        [(ngModel)]="currentProduit.idProduit"
+        name="idProduit"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Nom Produit</label>
+      <input
+        type="text"
+        [(ngModel)]="currentProduit.nomProduit"
+        name="nomProduit"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Serie</label>
+      <input
+        type="text"
+        [(ngModel)]="currentProduit.numeros"
+        name="serie"
+        class="form-control"
+      />
+    </div>
+    -
+
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Unité propriétaire</label>
+      <input
+        type="text"
+        [(ngModel)]="currentProduit.unite"
+        name="unite"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Unité propriétaire specifique</label>
+      <input
+        type="text"
+        [(ngModel)]="currentProduit.unitespec"
+        name="unitespec"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>donation</label>
+      <select
+        [(ngModel)]="currentProduit.donation"
+        name="donation"
+        class="form-control"
+      >
+        <option [ngValue]="true">Oui</option>
+        <option [ngValue]="false">Non</option>
+      </select>
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Date création</label>
+      <input
+        type="date"
+        [ngModel]="currentProduit.dateCreation | date : 'yyyy-MM-dd'"
+        (ngModelChange)="currentProduit.dateCreation = $event"
+        name="dateCreation"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label for="">Categorie</label>
+      <select
+        class="form-control form-control-lg"
+        id="idCat"
+        name="idCat"
+        [(ngModel)]="updateCatId"
+      >
+        <option *ngFor="let cat of categorie" [value]="cat.idCat">
+          {{ cat.nomCat }}
+        </option>
+      </select>
+    </div>
+    <div class="mt-2">
+      <button type="submit" (click)="updateProduit()" class="btn btn-success">
+        Modifier
+      </button>
+      <div>
+        <h3></h3>
+      </div>
+    </div>
+  </form>
+</div>

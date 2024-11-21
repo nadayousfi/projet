@@ -1,0 +1,65 @@
+<br /><br />
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Marque</th>
+      <th>Serie</th>
+
+      <th>Donation</th>
+      <th>Unité propriétaire</th>
+      <th>Unité specifique</th>
+      <th>Date</th>
+      <th>Categorie</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let produit of produitsPagines">
+      <td>{{ produit.nomProduit }}</td>
+      <td>{{ produit.numeros }}</td>
+
+      <td>{{ produit.donation ? "Oui" : "Non" }}</td>
+      <!-- Affichage de Donation -->
+
+      <td>{{ produit.unite }}</td>
+      <td>{{ produit.unitespec }}</td>
+
+      <td>{{ produit.dateCreation | date : "dd/MM/yy" }}</td>
+      <td>{{ produit.categorie.nomCat }}</td>
+      <td>
+        <a
+          *ngIf="authService.isAdmin()"
+          class="btn btn-danger"
+          (click)="supprimerProduit(produit)"
+          >Supprimer</a
+        >
+      </td>
+      <td>
+        <a
+          *ngIf="authService.isAdmin()"
+          class="btn btn-success"
+          [routerLink]="['/updateProduit', produit.idProduit]"
+          >Modifier</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Pagination Controls -->
+<div class="pagination">
+  <button
+    class="btn btn-danger"
+    (click)="pagePrecedente()"
+    [disabled]="page === 1"
+  >
+    Précédent
+  </button>
+  <span>Page{{ page }}/{{ nombreDePages() }}</span>
+  <button
+    class="btn btn-danger"
+    (click)="pageSuivante()"
+    [disabled]="page === nombreDePages()"
+  >
+    Suivant
+  </button>
+</div>

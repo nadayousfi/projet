@@ -1,0 +1,90 @@
+<br /><br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<div class="container">
+  <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+    <label>Categories </label>
+    <select
+      class="form-control form-control-lg"
+      id="idCat"
+      name="idCat"
+      [(ngModel)]="IdCategorie"
+      (change)="onChange()"
+    >
+      <option *ngFor="let cat of categories" value="{{ cat.idCat }}">
+        {{ cat.nomCat }}
+      </option>
+    </select>
+  </div>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>id</th>
+
+        <th>Marque</th>
+
+        <th>serie</th>
+        <th>Donation</th>
+        <th>Unité propriétaire</th>
+        <th>Unité specifique</th>
+
+        <th>Date</th>
+        <th>Categorie</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let produit of produitsPagines">
+      <tr>
+        <th>{{ produit.idProduit }}</th>
+        <td>{{ produit.nomProduit }}</td>
+        <td>{{ produit.numeros }}</td>
+
+        <td>{{ produit.donation ? "Oui" : "Non" }}</td>
+        <!-- Affichage de Donation -->
+
+        <td>{{ produit.unite }}</td>
+        <td>{{ produit.unitespec }}</td>
+
+        <td>{{ produit.dateCreation | date : "dd/MM/yy" }}</td>
+        <td>{{ produit.categorie.nomCat }}</td>
+        <td>
+          <!-- <td>
+        <a class="btn btn-danger" (click)="supprimerProduit(produit)"
+          >Supprimer</a
+        >
+      </td>
+      <td>
+        <a
+          class="btn btn-success"
+          [routerLink]="['/updateProduit', produit.idProduit]"
+          >Modifier</a
+        >
+      </td> -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="categories && categories.length > 0">
+  <!-- Pagination Controls -->
+  <div class="pagination">
+    <button
+      class="btn btn-danger"
+      (click)="pagePrecedente()"
+      [disabled]="page === 1"
+    >
+      Précédent
+    </button>
+    <span>Page{{ page }}/{{ nombreDePages() }}</span>
+    <button
+      class="btn btn-danger"
+      (click)="pageSuivante()"
+      [disabled]="page === nombreDePages()"
+    >
+      Suivant
+    </button>
+  </div>
+</div>

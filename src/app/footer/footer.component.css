@@ -1,0 +1,89 @@
+.footer-content {
+  background-color: #a19999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center; /* Centrer le contenu */
+}
+
+.footer-content h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 2rem;
+  margin-bottom: 1px; /* Espacement entre le titre et le paragraphe */
+}
+
+.footer-content p {
+  width: 200px;
+  margin: 5px auto;
+  line-height: 10px;
+  font-size: 14px;
+  margin-bottom: 2px; /* Espacement entre le paragraphe et la liste */
+}
+
+.socials {
+  list-style: none; /* Supprimer les puces de la liste */
+  padding: 0; /* Supprimer le padding */
+  margin-bottom: 0;
+}
+
+.socials li {
+  display: inline; /* Afficher les éléments de la liste en ligne */
+  margin: 0 10px; /* Espacement entre les icônes */
+}
+
+.footer-bottom {
+  text-align: center; /* Centrer le texte */
+  margin-top: 5px; /* Espacement au-dessus */
+  font-size: 14px; /* Taille de la police */
+  background: #000;
+  width: 100vw;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.footer-bottom span {
+  text-transform: uppercase;
+  opacity: 0.4;
+  font-weight: 200;
+}
+
+.socials a:hover i {
+  color: aqua;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.socials li {
+  margin: 0 10px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.socials a i {
+  font-size: 1.1rem;
+  transition: color 0.4s ease;
+}
+
+.design-name {
+  font-size: 20px; /* Taille de la police pour le nom */
+  font-weight: bold; /* Mettre en gras */
+  color: white; /* Couleur blanche */
+}

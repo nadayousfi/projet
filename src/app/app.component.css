@@ -1,0 +1,219 @@
+.navbar {
+  width: 1200px;
+  height: 95px;
+  margin: auto;
+}
+
+.icon {
+  width: 200px;
+  float: left;
+  height: 70px;
+}
+
+/*.logo {
+  color: #a8a6a5;
+  font-size: 35px;
+  font-family: Arial;
+  padding-left: 20px;
+  float: left;
+  padding-top: 10px;
+  margin-top: 5px;
+}*/
+
+.menu {
+  width: 400px;
+  margin-left: 3%;
+
+  height: 70px;
+}
+
+ul {
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul li {
+  list-style: none;
+  margin-left: 32px;
+  margin-top: 7px;
+  font-size: 14px;
+  position: relative;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: Arial;
+  font-weight: bold;
+  transition: 0.4s ease-in-out;
+}
+
+ul li a:hover {
+  color: #382f52;
+}
+
+.search {
+  color: #e7e5e4;
+  width: 330px;
+
+  float: left;
+  margin-left: 270px;
+}
+/* Sous-menu */
+#submenu {
+  opacity: 0;
+  position: absolute;
+  top: 100%; /* Positionné juste en dessous de l'élément parent */
+  left: 0;
+  visibility: hidden;
+  z-index: 10;
+  display: flex;
+  flex-direction: column; /* Pour afficher les éléments en colonne */
+  background-color: #fff;
+  padding: 0; /* Enlève tout espacement non nécessaire */
+  border-radius: 5px;
+  width: 200px; /* Définit une largeur uniforme pour tous les éléments du sous-menu */
+}
+
+/* Affichage du sous-menu au survol */
+li:hover ul#submenu {
+  opacity: 1;
+  visibility: visible;
+}
+
+#submenu li {
+  width: 100%; /* Assure que chaque élément du sous-menu occupe 100% de la largeur disponible */
+  padding: 0;
+  margin: 0;
+}
+
+#submenu a {
+  background-color: rgb(136, 165, 165);
+  padding: 10px; /* Ajoute un padding uniforme */
+  display: block;
+  color: #000;
+  text-align: left; /* Assure que le texte soit aligné à gauche */
+  width: 100%; /* Occupe toute la largeur de l'élément */
+  box-sizing: border-box; /* Pour inclure le padding dans la largeur */
+}
+
+#submenu a:hover {
+  background-color: #382f52;
+  color: #fff;
+}
+
+.srch {
+  font-family: "Times New Roman";
+  width: 200px;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #e7e5e4;
+  margin-top: 13px;
+  color: rgb(244, 234, 234);
+  border-right: none;
+  font-size: 16px;
+  float: left;
+  padding: 10px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Prend toute la hauteur de la fenêtre */
+}
+
+.router-outlet {
+  flex: 1; /* Prend tout l'espace disponible */
+}
+
+footer {
+  margin-top: auto; /* Force le footer à se placer en bas */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1; /* Prend tout l'espace disponible */
+}
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none; /* Masquer le menu par défaut */
+  position: absolute;
+  right: 0;
+  background-color: white; /* Couleur de fond du menu */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.user-dropdown:hover .dropdown-menu,
+.user-dropdown:focus-within .dropdown-menu {
+  display: block; /* Afficher le menu au survol ou au focus */
+}
+
+.dropdown-menu li {
+  padding: 8px 16px; /* Espacement des éléments du menu */
+}
+
+.dropdown-menu li a {
+  text-decoration: none; /* Supprimer le soulignement des liens */
+  color: black; /* Couleur du texte */
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f1f1f1; /* Couleur de fond au survol */
+}
+#submenu1 {
+  margin-left: auto; /* Déplace le lien User à droite */
+
+  opacity: 0;
+  position: absolute;
+  top: 100%; /* Positionné juste en dessous de l'élément parent */
+  left: 0;
+  visibility: hidden;
+  z-index: 10;
+  display: flex;
+  flex-direction: column; /* Pour afficher les éléments en colonne */
+  background-color: #fff;
+  padding: 0; /* Enlève tout espacement non nécessaire */
+  border-radius: 5px;
+  width: 200px; /* Définit une largeur uniforme pour tous les éléments du sous-menu */
+}
+
+/* Affichage du sous-menu au survol */
+li:hover ul#submenu1 {
+  opacity: 1;
+  visibility: visible;
+}
+
+#submenu1 li {
+  width: 100%; /* Assure que chaque élément du sous-menu occupe 100% de la largeur disponible */
+  padding: 0;
+  margin: 0;
+}
+
+#submenu1 a {
+  background-color: rgb(136, 165, 165);
+  padding: 10px; /* Ajoute un padding uniforme */
+  display: block;
+  color: #000;
+  text-align: left; /* Assure que le texte soit aligné à gauche */
+  width: 100%; /* Occupe toute la largeur de l'élément */
+  box-sizing: border-box; /* Pour inclure le padding dans la largeur */
+}
+
+#submenu1 a:hover {
+  background-color: #382f52;
+  color: #fff;
+}
